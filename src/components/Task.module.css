@@ -1,0 +1,45 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task > input {
+  height: 3.375rem;
+  width: 39.875rem;
+  border-radius: 8px;
+  background: var(--gray-500);
+  padding: 1rem 0 1rem 1rem;
+  border: 1px transparent solid;
+  color: var(--gray-100);
+}
+
+.task > input:hover {
+  border: 2px solid var(--purple-dark);
+}
+
+.task button {
+  height: 3.25rem;
+  width: 5.625rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  padding: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.5rem;
+}
+
+.task button:hover {
+  background: var(--blue);
+}
+.task button::after {
+  margin-rigth: 1rem;
+}
+.task button svg::after {
+  content: "\2022";
+}

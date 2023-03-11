@@ -12,7 +12,6 @@ export function App() {
     <div>
       <Header />
       <div className={styles.wrapper}>
-        <CreateTask />
         <TodoList />
       </div>
     </div>

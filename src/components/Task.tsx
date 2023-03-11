@@ -1,12 +1,26 @@
 import styles from "./Task.module.css";
-import { PlusCircle } from "phosphor-react";
+import { Trash } from "phosphor-react";
 
-export function Task() {
+export interface TaskType {
+  id: string;
+  content: string;
+  isCompleted: boolean;
+}
+
+interface TaskProps {
+  task: TaskType;
+}
+export function Task({ task }: TaskProps) {
   return (
     <div className={styles.task}>
-      <input placeholder="Adicione uma nova tarefa"></input>
+      <input
+        className={styles.taskSelect}
+        type="radio"
+        checked={task.isCompleted}
+      ></input>
+      <div className={styles.taskContent}>{task.content}</div>
       <button>
-        Criar <PlusCircle size={16} />
+        <Trash size={14} />
       </button>
     </div>
   );

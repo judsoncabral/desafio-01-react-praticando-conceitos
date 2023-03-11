@@ -1,0 +1,39 @@
+.header {
+  margin-bottom: 0.75rem;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.todoList {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.taskCreate strong {
+  color: var(--blue);
+}
+
+.taskComplete strong {
+  color: var(--purple);
+}
+
+.taskComplete {
+  display: inline-flex;
+}
+
+.taskCreate {
+  display: inline-flex;
+}
+.result {
+  display: flex;
+  border-radius: 12px;
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: auto;
+  padding: 2px 8px;
+  margin-left: 8px;
+  line-height: 160%;
+}

@@ -1,8 +1,9 @@
-.header {
+.todoList header {
   margin-bottom: 0.75rem;
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
+  width: 46rem;
 }
 .todoList {
   display: grid;

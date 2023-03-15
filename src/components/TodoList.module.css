@@ -3,7 +3,7 @@
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
-  width: 46rem;
+  max-width: 46rem;
 }
 .todoList {
   display: grid;
@@ -37,4 +37,25 @@
   padding: 2px 8px;
   margin-left: 8px;
   line-height: 160%;
+}
+
+.contentEmpty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 46rem;
+  height: 15.25rem;
+  line-height: 1.4;
+}
+
+.contentEmpty span {
+  color: var(--gray-300);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.contentEmpty p {
+  color: var(--gray-300);
+  font-size: 1rem;
 }

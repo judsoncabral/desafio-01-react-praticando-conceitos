@@ -1,5 +1,5 @@
 import styles from "./Task.module.css";
-import { Trash } from "phosphor-react";
+import { Check, Trash } from "phosphor-react";
 import { FormEvent } from "react";
 
 export interface TaskType {
@@ -25,20 +25,30 @@ export function Task({
   }
 
   function handleChangeIsCompletedTask(event: FormEvent) {
-    event.preventDefault();
     onChangeIsCompletedTask(task);
   }
 
   return (
     <div className={styles.task}>
-      <input
+      <button
         className={styles.taskSelect}
-        type="radio"
-        checked={task.isCompleted}
         onClick={handleChangeIsCompletedTask}
-      ></input>
-      <div className={styles.taskContent}>{task.content}</div>
-      <button onClick={handleDeleteTask}>
+      >
+        {task.isCompleted ? (
+          <div className={styles.taskIsSelected}>
+            {" "}
+            <Check />
+          </div>
+        ) : (
+          <div className={styles.taskIsNotSelected}></div>
+        )}
+      </button>
+      <div className={styles.taskContent}>
+        <p className={task.isCompleted ? styles.textIsCompleted : ""}>
+          {task.content}
+        </p>
+      </div>
+      <button className={styles.taskButtonRemove} onClick={handleDeleteTask}>
         <Trash size={14} />
       </button>
     </div>

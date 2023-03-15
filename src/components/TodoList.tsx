@@ -4,6 +4,7 @@ import { TaskType } from "./Task";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import { CreateTask } from "./CreateTask";
+import emptyTask from "../assets/emptyTask.svg";
 export function TodoList() {
   const [tasks, setTasks] = useState([
     {
@@ -31,13 +32,13 @@ export function TodoList() {
   }
 
   function onChangeIsCompletedTask(taskSelected: TaskType) {
-    tasks.map((task) => {
-      if (task.id == taskSelected.id) {
+    const newTask = tasks.map((task) => {
+      if (task.id === taskSelected.id) {
         task.isCompleted = !task.isCompleted;
-        console.log(task);
       }
+      return task;
     });
-    setTasks(tasks);
+    setTasks(newTask);
   }
 
   function getCompletedTasks() {
@@ -75,10 +76,9 @@ export function TodoList() {
         </header>
         {tasks.length == 0 && (
           <div className={styles.contentEmpty}>
-            <p>
-              <span>Você ainda não tem tarefas cadastradas</span>
-              Crie tarefas e organize seus itens a fazer
-            </p>
+            <img src={emptyTask} alt="Imagem de Tasks vazias"></img>
+            <span>Você ainda não tem tarefas cadastradas</span>
+            <p>Crie tarefas e organize seus itens a fazer</p>
           </div>
         )}
 

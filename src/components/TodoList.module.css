@@ -6,9 +6,12 @@
   max-width: 46rem;
 }
 .todoList {
-  display: grid;
+  display: block;
   justify-content: center;
   align-content: center;
+  margin: 0 auto;
+  max-width: 46rem;
+  padding-bottom: 2rem;
 }
 
 .taskCreate strong {
